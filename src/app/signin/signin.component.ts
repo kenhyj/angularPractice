@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-signin',
@@ -6,6 +6,13 @@ import { Component, OnInit, Input, Output } from '@angular/core';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
+
+  // https://angular.io/guide/inputs-outputs
+  @Output() newUsernameEvent = new EventEmitter<string>();
+
+  enterUsername(value: string) {
+    this.newUsernameEvent.emit(value)
+  }
 
   constructor() { }
 

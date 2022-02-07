@@ -434,7 +434,10 @@
       <pre *ngSwitchCase="'build'">ng build</pre>
   </div>
 
-  <app-signin></app-signin>
+  <app-signin (newUsernameEvent)="addUsername($event)"></app-signin>
+  <ul>
+    <li *ngFor="let username of unLists">{{username}}</li>
+  </ul>
 
   <!-- Links -->
   <div class="card-container">

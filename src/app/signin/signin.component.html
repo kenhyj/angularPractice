@@ -1,3 +1,8 @@
-<div>signin works!
+<div>Sign In
     <div> Anything else man? </div>
+    <form>
+        <input type="text" id="username" name="Username" #usernameValue><br/>
+        <input type="password" id="password" name="Password"> <br/>
+        <input type="submit" (click)="enterUsername(usernameValue.value)" >
+    </form>
 </div>
